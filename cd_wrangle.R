@@ -49,47 +49,47 @@ df <- merge(data, files, by = "ResponseId")
 
 sos <- df %>% 
   mutate(
-    interview_adj_2_R = case_when(
-      interview_adj_2 == 5 ~ 1,
-      interview_adj_2 == 4 ~ 2,
-      interview_adj_2 == 3 ~ 3,
-      interview_adj_2 == 2 ~ 4,
-      interview_adj_2 == 1 ~ 5
+    interview_adj_awkward_R = case_when(
+      interview_adj_awkward == 5 ~ 1,
+      interview_adj_awkward == 4 ~ 2,
+      interview_adj_awkward == 3 ~ 3,
+      interview_adj_awkward == 2 ~ 4,
+      interview_adj_awkward == 1 ~ 5
     ),
-    interview_adj_4_R = case_when(
-      interview_adj_4 == 5 ~ 1,
-      interview_adj_4 == 4 ~ 2,
-      interview_adj_4 == 3 ~ 3,
-      interview_adj_4 == 2 ~ 4,
-      interview_adj_4 == 1 ~ 5
+    interview_adj_difficult_R = case_when(
+      interview_adj_difficult == 5 ~ 1,
+      interview_adj_difficult == 4 ~ 2,
+      interview_adj_difficult == 3 ~ 3,
+      interview_adj_difficult == 2 ~ 4,
+      interview_adj_difficult == 1 ~ 5
     ),
     
-    interview_qual = (interview_adj_1 + interview_adj_2_R + interview_adj_3 + interview_adj_4_R + interview_adj_5 + interview_adj_6)/6,
+    interview_qual = (interview_adj_smooth + interview_adj_awkward_R + interview_adj_comfortable + interview_adj_difficult_R + interview_adj_open + interview_adj_pleasant)/6,
     
     ###Interviewer quality
     
-    interviewer_adj_2_R = case_when(
-      interviewer_adj_2 == 5 ~ 1,
-      interviewer_adj_2 == 4 ~ 2,
-      interviewer_adj_2 == 3 ~ 3,
-      interviewer_adj_2 == 2 ~ 4,
-      interviewer_adj_2 == 1 ~ 5
+    interviewer_adj_challenging_R = case_when(
+      interviewer_adj_challenging == 5 ~ 1,
+      interviewer_adj_challenging == 4 ~ 2,
+      interviewer_adj_challenging == 3 ~ 3,
+      interviewer_adj_challenging == 2 ~ 4,
+      interviewer_adj_challenging == 1 ~ 5
     ),
-    interviewer_adj_3_R = case_when(
-      interviewer_adj_3 == 5 ~ 1,
-      interviewer_adj_3 == 4 ~ 2,
-      interviewer_adj_3 == 3 ~ 3,
-      interviewer_adj_3 == 2 ~ 4,
-      interviewer_adj_3 == 1 ~ 5
+    interviewer_adj_aggressive_R = case_when(
+      interviewer_adj_aggressive == 5 ~ 1,
+      interviewer_adj_aggressive == 4 ~ 2,
+      interviewer_adj_aggressive == 3 ~ 3,
+      interviewer_adj_aggressive == 2 ~ 4,
+      interviewer_adj_aggressive == 1 ~ 5
     ),
-    interviewer_adj_6_R = case_when(
-      interviewer_adj_6 == 5 ~ 1,
-      interviewer_adj_6 == 4 ~ 2,
-      interviewer_adj_6 == 3 ~ 3,
-      interviewer_adj_6 == 2 ~ 4,
-      interviewer_adj_6 == 1 ~ 5
+    interviewer_adj_rough_R = case_when(
+      interviewer_adj_rough == 5 ~ 1,
+      interviewer_adj_rough == 4 ~ 2,
+      interviewer_adj_rough == 3 ~ 3,
+      interviewer_adj_rough == 2 ~ 4,
+      interviewer_adj_rough == 1 ~ 5
     ),
-    interviewer_qual = (interviewer_adj_1 + interviewer_adj_2_R + interviewer_adj_3_R + interviewer_adj_4 + interviewer_adj_5 + interviewer_adj_6_R)/6,
+    interviewer_qual = (interviewer_adj_friendly + interviewer_adj_challenging_R + interviewer_adj_aggressive_R + interviewer_adj_sympathetic + interviewer_adj_interested + interviewer_adj_rough_R)/6,
     
     ### Self-assessment of performance
     
