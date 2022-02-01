@@ -102,8 +102,7 @@ perf_desc <- sos %>%
     Mean = mean(self_assessment, na.rm = TRUE),
     SD = sd(self_assessment, na.rm = TRUE),
     Median = median(self_assessment, na.rm = TRUE)
-  ) %>% 
-  knitr::kable(digits = 2, align = "l")
+  )
 
 ## Plots self-assessment
 
@@ -183,8 +182,7 @@ interview_desc <- sos %>%
     Mean = mean(interview_qual, na.rm = TRUE),
     SD = sd(interview_qual, na.rm = TRUE),
     Median = median(interview_qual, na.rm = TRUE)
-  ) %>% 
-  knitr::kable(digits = 2, align = "l")
+  )
 
 ## Plot
 
@@ -208,8 +206,7 @@ interviewer_desc <- sos %>%
     Mean = mean(interviewer_qual, na.rm = TRUE),
     SD = sd(interviewer_qual, na.rm = TRUE),
     Median = median(interviewer_qual, na.rm = TRUE)
-  ) %>% 
-  knitr::kable(digits = 2, align = "l")
+  )
 
 ## Plot
 

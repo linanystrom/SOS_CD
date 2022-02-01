@@ -15,7 +15,7 @@ set.seed(540)
 nr_mcs    <- 3    #Number of mock crimes
 nr_stages <- 2    #Number of stages per mock crime
 nr_style  <- 3    #Number of styles
-sample    <- 300  #Sample size
+sample    <- 240  #Sample size
 group     <- sample / nr_mcs
 
 style     <- c("standard", "cool_off", "diversion") #interview style

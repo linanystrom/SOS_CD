@@ -116,7 +116,7 @@ sos$crime_order <- paste(sos$mock_crime, sos$sequence)
 ### Organize columns
 
 sos_wrangle <- sos %>%
-  select(ID, ResponseId, mock_crime, sequence, crime_order, style, interviewer, stage_1, stage_2, stage_3, stage_4, stage_5, stage_6, st_1_conf, st_2_conf, st_3_conf, st_4_conf, st_1_reinf, st_2_reinf, st_3_reinf, confidence, motivation, interview_qual, interviewer_qual, self_assessment, age, gender, everything())
+  select(ID, ResponseId, mock_crime, sequence, crime_order, style, interviewer, stage_1, stage_2, stage_3, stage_4, stage_5, stage_6, confidence, motivation, interview_qual, interviewer_qual, self_assessment, age, gender, everything())
 
 ### Transform data to long format
 
