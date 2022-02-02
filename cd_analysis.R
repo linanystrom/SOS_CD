@@ -6,9 +6,13 @@ lapply(packages, library, character.only = TRUE)
 
 # Import data --------------------------------------------------
 
-sos      <- read.csv("./data/sos_wrangle.csv")
+sos_full      <- read.csv("./data/sos_wrangle.csv")
 
-sos_long <- read.csv("./data/sos_long.csv")
+sos_long_full <- read.csv("./data/sos_long.csv")
+
+sos           <- sos_full %>% filter(!exclusion %in% c('1'))      #Filter exclusions
+
+sos_long      <- sos_long_full %>% filter(!exclusion %in% c('1')) #Filter exclusions
 
 # Hypothesis testing - Information disclosure --------------------------------------------------
 
@@ -70,7 +74,7 @@ info_plot <- ggplot(sos_long,
     x = "Phase"
   ) +
   scale_x_discrete(
-    labels = c("1", "2", "3","4","5","6") ## nope
+    labels = c("1", "2", "3","4","5","6")
   ) +
   coord_cartesian(
     ylim = c(0, 5)
