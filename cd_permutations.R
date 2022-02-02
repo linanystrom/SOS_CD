@@ -15,7 +15,7 @@ set.seed(540)
 nr_mcs    <- 3    #Number of mock crimes
 nr_stages <- 2    #Number of stages per mock crime
 nr_style  <- 3    #Number of styles
-sample    <- 156  #Sample size
+sample    <- 159  #Sample size
 group     <- sample / nr_mcs
 
 style     <- c("standard", "cool_off", "diversion") #interview style
@@ -57,7 +57,7 @@ MCpermutations$mock_crime <- c("MC_2")
 MCpermutations$mock_crime[1:poss_permutations]<- c("MC_1")
 MCpermutations$mock_crime[(mc_x_poss_permutations - (poss_permutations - 1)):mc_x_poss_permutations]<- c("MC_3")
 
-sample_permutations <- do.call("rbind", replicate((sample/mc_x_poss_permutations), MCpermutations, simplify = FALSE))
+sample_permutations <- do.call("rbind", replicate((sample/mc_x_poss_permutations) + 1, MCpermutations, simplify = FALSE))[1:sample, ]
 
 sample_permutations$style[sample(1:nrow(sample_permutations), nrow(sample_permutations), FALSE)] <- rep(style,group)
 
